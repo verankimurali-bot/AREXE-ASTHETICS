@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Prank Reel</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Poppins:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- External CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== START OVERLAY ===== -->
+    <div class="start-overlay" id="startOverlay">
+        <div class="start-icon"></div>
+        <div class="start-text">Tap to Play</div>
+    </div>
+
+    <!-- ===== SCENE 1: HOOK ===== -->
+    <div class="scene-hook" id="sceneHook">
+        <div class="hearts-container" id="heartsContainer"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <div class="hook-text-wrapper">
+            <div class="hook-line hook-line-1" id="hookLine1">Hold your heart... 🕯️</div>
+            <div class="hook-divider" id="hookDivider"></div>
+            <div class="hook-line hook-line-2" id="hookLine2">
+                Something beautiful<br>is on its way to you
+            </div>
+            <div class="hook-line hook-dots" id="hookDots">· · ·</div>
+            <span class="hook-line hook-emoji" id="hookEmoji">🥀🤍</span>
+        </div>
+    </div>
+
+    <!-- ===== SCENE 2: BUILD-UP & COUNTDOWN ===== -->
+    <div class="scene-buildup" id="sceneBuildup">
+        <div class="buildup-bg-glow"></div>
+        <div class="buildup-bg-glow-gold"></div>
+
+        <div class="buildup-text-wrapper">
+            <div class="buildup-line buildup-line-1" id="buildupLine1">— Hold Your Breath —</div>
+            <div class="countdown-number" id="countdownNumber">3</div>
+            <div class="buildup-line buildup-line-3" id="buildupLine3">Are you ready? 🕯️</div>
+        </div>
+    </div>
+
+    <!-- Glitch Flash -->
+    <div class="glitch-flash" id="glitchFlash"></div>
+    <div class="scanlines" id="scanlines"></div>
+
+    <!-- ===== SCENE 3: PRANK REVEAL ===== -->
+    <div class="scene-prank" id="scenePrank">
+        <div class="prank-bg"></div>
+        <div class="emoji-rain" id="emojiRain"></div>
+
+        <div class="prank-text-wrapper" id="prankTextWrapper">
+            <div class="prank-line prank-line-1" id="prankLine1">
+                Kya soche the...<br>
+                kuch romantic aayega? 😂<br>
+                <span class="prank-highlight">Kuch nahi hai! 🙈</span>
+            </div>
+            <div class="prank-line prank-line-2" id="prankLine2">
+                Khali baitha tha, to socha<br>
+                tum sabka bhi time waste kar du 😜
+            </div>
+            <div class="prank-line prank-line-3" id="prankLine3">
+                Chalo chalo, ab scroll kardo! 🤣✌️
+            </div>
+            <span class="prank-big-emoji" id="prankBigEmoji">💀🤣</span>
+        </div>
+
+        <div class="prank-bottom-text" id="prankBottom">
+            har bar kuch kaam ka hi hoga aisa toh nahi 😏
+        </div>
+    </div>
+
+    <!-- ===== SCENE 4: FINAL TROLL ===== -->
+    <div class="scene-troll" id="sceneTroll">
+        <div class="troll-bg"></div>
+        <div class="emoji-rain" id="emojiRain2"></div>
+
+        <div class="troll-text-wrapper" id="trollTextWrapper">
+            <div class="troll-line troll-line-1" id="trollLine1">
+                Abhi bhi <span class="troll-highlight-gold">scroll nahi kiya?</span> <span class="eye-emoji">👀</span>
+            </div>
+            <div class="troll-line troll-line-2" id="trollLine2">
+                Ab kya karu...<br>
+                <span class="troll-highlight-pink">dil cheer ke rakh du? 🫀</span><br>
+                tabhi jaoge kya?
+            </div>
+            <div class="troll-line troll-line-3" id="trollLine3">
+                Itna bhi <span class="sass">expect</span> mat karo<br>
+                <span class="troll-highlight-gold">har bar 😭</span>
+            </div>
+            <span class="troll-big-emoji" id="trollBigEmoji">🤡🤣</span>
+        </div>
+
+        <div class="troll-bottom-tag" id="trollBottom">
+            ab toh scroll karo yaar 😂✌️
+        </div>
+    </div>
+
+    <!-- Replay -->
+    <button class="replay-btn" id="replayBtn" onclick="replayAnimation()">🔄 Replay</button>
+
+    <!-- External JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
