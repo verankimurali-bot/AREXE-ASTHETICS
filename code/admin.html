@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal | Pandu Collections Atelier</title>
+  
+  <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- =========================================================================
+       1. ADMIN SECURITY GATE (Only accessible by authenticated Admin)
+       ========================================================================= -->
+  <div id="admin-auth-gate" class="auth-gate-overlay">
+    <div class="auth-card glass-panel">
+      <div class="auth-header">
+        <span class="auth-badge">RESTRICTED ACCESS</span>
+        <h1 class="auth-title">PANDU COLLECTIONS</h1>
+        <p class="auth-subtitle">Atelier Inventory & Catalog Administration Gate</p>
+      </div>
+
+      <form id="admin-login-form" class="auth-form">
+        <div class="auth-field">
+          <label for="admin-user">Admin Username</label>
+          <div class="input-with-icon">
+            <span class="field-icon">👤</span>
+            <input type="text" id="admin-user" placeholder="Enter admin username" required autocomplete="username">
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <label for="admin-pass">Master Passcode</label>
+          <div class="input-with-icon">
+            <span class="field-icon">🔑</span>
+            <input type="password" id="admin-pass" placeholder="Enter master passcode" required autocomplete="current-password">
+          </div>
+        </div>
+
+        <div id="auth-error-msg" class="auth-error" style="display: none;"></div>
+
+        <button type="submit" class="btn btn-solid-white btn-block auth-submit-btn">
+          <span>Authorize & Unlock Dashboard</span> &rarr;
+        </button>
+      </form>
+
+      <div class="auth-credentials-hint">
+        <span class="hint-icon">💡</span>
+        <div class="hint-text">
+          <strong>Default Admin Credentials:</strong><br>
+          Username: <code class="auth-code">admin</code> &bull; Passcode: <code class="auth-code">admin123</code>
+        </div>
+      </div>
+
+      <div class="auth-footer-link">
+        <a href="index.html">&larr; Return to Public Storefront</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       2. PROTECTED ADMIN DASHBOARD (Visible ONLY to verified Admin)
+       ========================================================================= -->
+  <div id="admin-dashboard" class="admin-dashboard-wrapper" style="display: none;">
+    
+    <!-- Top Admin Header -->
+    <header class="admin-topbar">
+      <div class="admin-topbar-inner container">
+        <div class="admin-brand">
+          <a href="index.html" class="brand-logo" title="View Store">
+            <span class="logo-mark">PANDU</span>
+            <span class="logo-sub">ADMIN</span>
+          </a>
+          <span class="admin-status-pill">
+            <span class="status-dot"></span> Admin Authenticated
+          </span>
+        </div>
+
+        <div class="admin-topbar-actions">
+          <a href="index.html" target="_blank" class="btn btn-outline btn-sm">
+            <span>View Live Store ↗</span>
+          </a>
+          <button id="admin-logout-btn" class="btn btn-danger-outline btn-sm">
+            <span>Lock & Logout 🔒</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container admin-main-content">
+
+      <!-- KPI Summary Cards -->
+      <section class="admin-kpi-grid">
+        <div class="kpi-card glass-panel">
+          <div class="kpi-header">
+            <span class="kpi-label">Active Garments</span>
+            <span class="kpi-icon">🏷️</span>
+          </div>
+          <div class="kpi-value" id="kpi-total-items">0</div>
+          <span class="kpi-sub">Total pieces in live catalog</span>
+        </div>
+
+        <div class="kpi-card glass-panel">
+          <div class="kpi-header">
+            <span class="kpi-label">Categories</span>
+            <span class="kpi-icon">📂</span>
+          </div>
+          <div class="kpi-value" id="kpi-categories">0</div>
+          <span class="kpi-sub">Active apparel lines</span>
+        </div>
+
+        <div class="kpi-card glass-panel">
+          <div class="kpi-header">
+            <span class="kpi-label">Avg Retail Price</span>
+            <span class="kpi-icon">💎</span>
+          </div>
+          <div class="kpi-value" id="kpi-avg-price">$0</div>
+          <span class="kpi-sub" id="kpi-avg-inr">≈ ₹0 INR</span>
+        </div>
+
+        <div class="kpi-card glass-panel">
+          <div class="kpi-header">
+            <span class="kpi-label">Collection Valuation</span>
+            <span class="kpi-icon">🏛️</span>
+          </div>
+          <div class="kpi-value" id="kpi-total-val">$0</div>
+          <span class="kpi-sub">Combined catalog retail base</span>
+        </div>
+      </section>
+
+      <!-- Main Layout: Form (Add Item) + Inventory (Current Items) -->
+      <div class="admin-layout-grid">
+
+        <!-- ==========================================
+             LEFT: ADD NEW ITEM FORM
+             ========================================== -->
+        <section class="admin-panel-card glass-panel">
+          <div class="panel-header">
+            <div>
+              <span class="category-sub">PRODUCT MANAGEMENT</span>
+              <h2 class="panel-heading">Add New Garment</h2>
+              <p class="panel-subtext">Publish new apparel directly to the Pandu Collections storefront.</p>
+            </div>
+            <span class="panel-badge">+ Add Item</span>
+          </div>
+
+          <!-- Quick Preset Image Inspiration Chips -->
+          <div class="presets-block">
+            <span class="presets-label">⚡ Quick Sample Photos (Click to auto-populate image):</span>
+            <div class="preset-chips-row">
+              <button type="button" class="preset-chip" data-img="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=80" data-name="Leather Biker Jacket" data-cat="outerwear" data-price="420" data-mat="Vegetable-Tanned Italian Calfskin">
+                🏍️ Leather Jacket
+              </button>
+              <button type="button" class="preset-chip" data-img="https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?auto=format&fit=crop&w=900&q=80" data-name="Architectural Wool Overcoat" data-cat="outerwear" data-price="450" data-mat="Dense Melange Virgin Wool">
+                🧥 Wool Overcoat
+              </button>
+              <button type="button" class="preset-chip" data-img="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=900&q=80" data-name="Heavy Fleece Boxy Hoodie" data-cat="streetwear" data-price="195" data-mat="700GSM Japanese Loopwheel Cotton">
+                👕 Heavy Hoodie
+              </button>
+              <button type="button" class="preset-chip" data-img="https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=900&q=80" data-name="Chunky Fisherman Rib Knit" data-cat="knitwear" data-price="275" data-mat="Organic Merino & Baby Alpaca">
+                🧶 Ribbed Knit
+              </button>
+              <button type="button" class="preset-chip" data-img="https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=900&q=80" data-name="Relaxed Pleated Wide Pant" data-cat="streetwear" data-price="220" data-mat="Fine Suiting Tropical Wool">
+                👖 Wide Trousers
+              </button>
+            </div>
+          </div>
+
+          <form id="add-product-form" class="product-form">
+            
+            <!-- Garment Name -->
+            <div class="form-group">
+              <label for="item-name">Garment / Product Name *</label>
+              <input type="text" id="item-name" placeholder="e.g. Oversized Technical Bomber" required>
+            </div>
+
+            <!-- Category & Badge Row -->
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="item-category">Category *</label>
+                <select id="item-category" required>
+                  <option value="outerwear">Outerwear (Coats & Jackets)</option>
+                  <option value="streetwear">Streetwear (Hoodies & Pants)</option>
+                  <option value="knitwear">Knitwear (Sweaters & Turtlenecks)</option>
+                  <option value="tailoring">Tailoring & Blazers</option>
+                  <option value="accessories">Accessories</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="item-badge">Badge Label</label>
+                <select id="item-badge">
+                  <option value="NEW DROP">NEW DROP</option>
+                  <option value="BESTSELLER">BESTSELLER</option>
+                  <option value="EXCLUSIVE">EXCLUSIVE</option>
+                  <option value="LIMITED ARCHIVE">LIMITED ARCHIVE</option>
+                  <option value="SIGNATURE DROP">SIGNATURE DROP</option>
+                  <option value="WEATHERPROOF">WEATHERPROOF</option>
+                  <option value="RUNWAY ESSENTIAL">RUNWAY ESSENTIAL</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Price & Fabric Specs Row -->
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="item-price">Base Price ($ USD) *</label>
+                <div class="price-input-wrap">
+                  <span class="currency-tag">$</span>
+                  <input type="number" id="item-price" placeholder="220" min="1" step="1" required>
+                </div>
+                <small class="helper-text" id="price-inr-preview">Estimated: ₹0 INR</small>
+              </div>
+
+              <div class="form-group">
+                <label for="item-material">Fabric & Material Specs *</label>
+                <input type="text" id="item-material" placeholder="e.g. 600GSM Japanese Loopback Fleece" required>
+              </div>
+            </div>
+
+            <!-- Image URL with Live Thumbnail -->
+            <div class="form-group">
+              <label for="item-image">Image URL *</label>
+              <input type="url" id="item-image" placeholder="https://images.unsplash.com/..." required>
+              
+              <!-- Live Preview Card Mini -->
+              <div class="img-preview-container" id="img-preview-box">
+                <img id="live-img-preview" src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=400&q=80" alt="Preview">
+                <div class="img-preview-info">
+                  <span class="preview-badge" id="preview-badge-display">NEW DROP</span>
+                  <strong id="preview-title-display">Product Title</strong>
+                  <span id="preview-price-display">$0</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+              <label for="item-desc">Product Description & Fit Notes *</label>
+              <textarea id="item-desc" rows="3" placeholder="Engineered with relaxed dropped shoulder drape and tonal architectural stitchwork..." required></textarea>
+            </div>
+
+            <!-- Color Swatches Row -->
+            <div class="form-group">
+              <label>Color Swatches (Select up to 3 colors)</label>
+              <div class="swatch-inputs-grid">
+                
+                <div class="swatch-input-item">
+                  <input type="color" id="swatch-color-1" value="#121214" title="Choose color">
+                  <input type="text" id="swatch-name-1" value="Obsidian Black" placeholder="Color 1 Name">
+                </div>
+
+                <div class="swatch-input-item">
+                  <input type="color" id="swatch-color-2" value="#d4cfcb" title="Choose color">
+                  <input type="text" id="swatch-name-2" value="Dune Sand" placeholder="Color 2 Name">
+                </div>
+
+                <div class="swatch-input-item">
+                  <input type="color" id="swatch-color-3" value="#444a3c" title="Choose color">
+                  <input type="text" id="swatch-name-3" value="Forest Olive" placeholder="Color 3 Name">
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-solid-white btn-block" id="publish-btn">
+              <span>Publish Garment to Storefront</span> ✨
+            </button>
+          </form>
+        </section>
+
+
+        <!-- ==========================================
+             RIGHT: INVENTORY & CATALOG MANAGEMENT
+             ========================================== -->
+        <section class="admin-panel-card glass-panel">
+          <div class="panel-header">
+            <div>
+              <span class="category-sub">LIVE INVENTORY</span>
+              <h2 class="panel-heading">Active Store Catalog</h2>
+              <p class="panel-subtext">Manage, inspect, or delete pieces from the public storefront.</p>
+            </div>
+            <div class="inventory-header-actions">
+              <button id="reset-catalog-btn" class="btn btn-outline btn-xs" title="Reset to original 8 capsule products">
+                ↺ Reset Catalog
+              </button>
+            </div>
+          </div>
+
+          <!-- Inventory Search & Filter Filter -->
+          <div class="inventory-filter-bar">
+            <div class="search-box admin-search">
+              <input type="text" id="inv-search-input" placeholder="Search catalog by name, category, or fabric...">
+              <span class="search-icon">🔍</span>
+            </div>
+
+            <div class="inv-filter-tags" id="inv-filter-tags">
+              <button class="filter-pill active" data-cat="all">All (<span id="cat-count-all">0</span>)</button>
+              <button class="filter-pill" data-cat="outerwear">Outerwear</button>
+              <button class="filter-pill" data-cat="streetwear">Streetwear</button>
+              <button class="filter-pill" data-cat="knitwear">Knitwear</button>
+            </div>
+          </div>
+
+          <!-- Items List Container -->
+          <div class="inventory-list" id="inventory-items-container">
+            <!-- Dynamically populated via admin.js -->
+          </div>
+      </div>
+
+      <!-- ==========================================
+           3. RECENT ORDERS (BACKEND API FEED)
+           ========================================== -->
+      <section class="admin-panel-card glass-panel" style="margin-top: 2rem;">
+        <div class="panel-header">
+          <div>
+            <span class="category-sub">BACKEND COMMERCE FEED</span>
+            <h2 class="panel-heading">Recent Customer Orders</h2>
+            <p class="panel-subtext">Real-time checkout orders stored in the backend database (data/orders.json).</p>
+          </div>
+          <div class="inventory-header-actions">
+            <button id="refresh-orders-btn" class="btn btn-outline btn-xs">
+              ↻ Refresh Orders
+            </button>
+          </div>
+        </div>
+
+        <div id="orders-list-container" class="orders-list">
+          <div class="inv-empty-state">
+            <span class="inv-empty-icon">🛍️</span>
+            <h4>No orders recorded yet</h4>
+            <p style="font-size: 0.8rem; margin-top: 0.35rem;">Orders placed by shoppers through the storefront checkout will appear here.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Admin Footer -->
+    <footer class="admin-footer container">
+      <p>&copy; 2026 PANDU COLLECTIONS ATELIER. Admin Control System &bull; Secure Local Storage Sync</p>
+      <a href="index.html" class="admin-back-link">Return to Storefront &rarr;</a>
+    </footer>
+  </div>
+
+  <!-- Notification Toast Container -->
+  <div id="admin-toast" class="admin-toast"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

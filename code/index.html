@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="AURA ATELIER - Contemporary Luxury Streetwear & Minimalist Essentials. Engineered silhouettes crafted from organic Japanese cotton and Italian wool.">
+  <meta name="keywords"
+    content="luxury streetwear, clothing brand, minimalist fashion, designer hoodies, trench coats, contemporary apparel">
+  <title>PANDU COLLECTIONS | Contemporary Luxury & Streetwear</title>
+
+  <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-track">
+      <span>✦ AUTUMN / WINTER 2026 CAPSULE RELEASED</span>
+      <span class="divider">&bull;</span>
+      <span>COMPLIMENTARY WORLDWIDE EXPRESS SHIPPING OVER $150</span>
+      <span class="divider">&bull;</span>
+      <span>USE CODE <strong class="promo-highlight">AURA15</strong> FOR 15% OFF YOUR FIRST ORDER</span>
+      <span class="divider">&bull;</span>
+      <span>ETHICALLY CRAFTED &bull; JAPANESE ORGANIC COTTON &bull; ZERO PLASTIC PACKAGING</span>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar container" id="main-nav" aria-label="Main Navigation">
+
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" id="brand-logo">
+        <span class="logo-mark">AURA</span>
+        <span class="logo-sub">ATELIER</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#collection" class="nav-link" data-filter="all">All Drops</a></li>
+        <li><a href="#collection" class="nav-link" data-filter="outerwear">Outerwear</a></li>
+        <li><a href="#collection" class="nav-link" data-filter="streetwear">Streetwear</a></li>
+        <li><a href="#collection" class="nav-link" data-filter="knitwear">Knitwear</a></li>
+        <li><a href="#lookbook" class="nav-link">Lookbook</a></li>
+        <li><a href="#sustainability" class="nav-link">Craft</a></li>
+      </ul>
+
+      <!-- Nav Utility Actions -->
+      <div class="nav-actions">
+        <!-- Live Search Bar -->
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Search apparel..." aria-label="Search garments">
+          <span class="search-icon">🔍</span>
+        </div>
+
+        <!-- Currency Selector -->
+        <select id="currency-select" class="currency-picker" aria-label="Select Currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="INR">INR (₹)</option>
+        </select>
+
+        <!-- Theme Switcher -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle Mode">
+          <span class="sun-icon">☀️</span>
+          <span class="moon-icon">🌙</span>
+        </button>
+
+        <!-- Wishlist Icon -->
+        <button class="icon-btn wishlist-btn" id="wishlist-toggle" aria-label="View Wishlist" title="Wishlist">
+          <span class="heart-icon">♥</span>
+          <span class="badge-count" id="wishlist-count">0</span>
+        </button>
+
+        <!-- Cart Bag Trigger -->
+        <button class="cart-trigger-btn" id="cart-toggle" aria-label="Open Shopping Bag">
+          <span class="cart-icon">👜</span>
+          <span class="cart-label">Bag</span>
+          <span class="badge-count" id="cart-count">0</span>
+        </button>
+
+        <!-- Admin Portal Link -->
+        <a href="admin.html" class="icon-btn admin-portal-btn" aria-label="Admin Portal" title="Admin Portal (Item Management)">
+          <span>⚙️</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links">
+      <li><a href="#collection" class="mob-link" data-filter="all">All Drops</a></li>
+      <li><a href="#collection" class="mob-link" data-filter="outerwear">Outerwear</a></li>
+      <li><a href="#collection" class="mob-link" data-filter="streetwear">Streetwear</a></li>
+      <li><a href="#collection" class="mob-link" data-filter="knitwear">Knitwear</a></li>
+      <li><a href="#lookbook" class="mob-link">Editorial Lookbook</a></li>
+      <li><a href="#sustainability" class="mob-link">Craft & Sustainability</a></li>
+      <li><a href="#reviews" class="mob-link">Client Reviews</a></li>
+      <li><a href="admin.html" class="mob-link" style="color: var(--accent-gold); font-weight: 600;">⚙️ Admin Portal</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- Editorial Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-media-wrapper">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1800&q=85"
+          alt="AURA Atelier Autumn Winter 2026 Collection Campaign" class="hero-img">
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-content container">
+        <div class="hero-capsule-tag">
+          <span class="pulse-indicator"></span>
+          <span>AUTUMN / WINTER 2026 CAMPAIGN</span>
+        </div>
+
+        <h1 class="hero-heading">
+          SCULPTURAL FORM.<br>
+          <span class="italic-serif">EFFORTLESS SILHOUETTE.</span>
+        </h1>
+
+        <p class="hero-subtext">
+          Precision tailoring harmonized with brutalist street aesthetics. Constructed from certified organic Japanese
+          cotton, dense double-face Italian wool, and waterproof architectural weaves.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#collection" class="btn btn-solid-white btn-lg" id="shop-drop-btn">
+            <span>Explore The Collection</span>
+            <span class="arrow-symbol">&rarr;</span>
+          </a>
+          <a href="#lookbook" class="btn btn-glass-blur btn-lg" id="view-lookbook-btn">
+            <span>View Editorial Lookbook</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee Highlights Ticker -->
+    <section class="brand-ticker" aria-hidden="true">
+      <div class="ticker-scroll">
+        <span>ARCHITECTURAL TAILORING</span>
+        <span class="ticker-dot">✦</span>
+        <span>JAPANESE ORGANIC COTTON</span>
+        <span class="ticker-dot">✦</span>
+        <span>CARBON-NEUTRAL DELIVERY</span>
+        <span class="ticker-dot">✦</span>
+        <span>ITALIAN DOUBLE-FACE MERINO</span>
+        <span class="ticker-dot">✦</span>
+        <span>LIMITED RUN PRODUCTION</span>
+        <span class="ticker-dot">✦</span>
+        <span>ARCHITECTURAL TAILORING</span>
+        <span class="ticker-dot">✦</span>
+        <span>JAPANESE ORGANIC COTTON</span>
+        <span class="ticker-dot">✦</span>
+        <span>CARBON-NEUTRAL DELIVERY</span>
+      </div>
+    </section>
+
+    <!-- Collection Showcase Section -->
+    <section class="collection-section container" id="collection">
+      <div class="section-title-wrap">
+        <div class="title-meta">
+          <span class="category-sub">SEASON ARCHIVE &bull; DROP 01</span>
+          <h2 class="section-heading">Curated Apparel Catalog</h2>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls" id="filter-controls">
+          <button class="filter-pill active" data-filter="all">All Items (<span id="count-all">8</span>)</button>
+          <button class="filter-pill" data-filter="outerwear">Outerwear</button>
+          <button class="filter-pill" data-filter="streetwear">Streetwear</button>
+          <button class="filter-pill" data-filter="knitwear">Knitwear</button>
+        </div>
+      </div>
+
+      <!-- Live Search / Active Count Status -->
+      <div class="catalog-status-bar" id="catalog-status" style="display: none;">
+        <span>Showing results for "<strong id="search-query-display"></strong>"</span>
+        <button id="clear-search-btn" class="clear-btn">Clear filter &times;</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- Product items injected & managed via script.js -->
+      </div>
+    </section>
+
+    <!-- Interactive Editorial Lookbook Section -->
+    <section class="lookbook-section" id="lookbook">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="category-sub">PARISIAN & TOKYO EDITORIAL</span>
+          <h2 class="section-heading">Winter Silhouette Lookbook</h2>
+          <p class="section-subtext">Click the interactive hotspots on the models below to discover and acquire the
+            exact pieces worn in each editorial scene.</p>
+        </div>
+
+        <div class="lookbook-showcase glass-panel">
+          <div class="lookbook-image-container">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=85"
+              alt="Editorial Look 01 - Sculptural Streetwear" class="lookbook-main-img" id="lookbook-image">
+
+            <!-- Hotspot 1: Coat -->
+            <button class="hotspot-pin pin-1" data-product-id="coat-01" aria-label="Inspect Tailored Trench Coat">
+              <span class="hotspot-pulse"></span>
+              <span class="hotspot-core">+</span>
+              <span class="hotspot-tooltip">
+                <strong>Atelier Double Trench</strong>
+                <span class="tooltip-price">$380</span>
+                <small>Tap to view &rarr;</small>
+              </span>
+            </button>
+
+            <!-- Hotspot 2: Knitwear / Scarf -->
+            <button class="hotspot-pin pin-2" data-product-id="knit-01" aria-label="Inspect Cashmere Knit Sweater">
+              <span class="hotspot-pulse"></span>
+              <span class="hotspot-core">+</span>
+              <span class="hotspot-tooltip">
+                <strong>Alpaca Ribbed Sweater</strong>
+                <span class="tooltip-price">$240</span>
+                <small>Tap to view &rarr;</small>
+              </span>
+            </button>
+          </div>
+
+          <div class="lookbook-sidebar">
+            <span class="editorial-badge">LOOK 04 &bull; CAPSULE AW26</span>
+            <h3 class="look-title">The Monolith Uniform</h3>
+            <p class="look-desc">
+              Layering tactile 650GSM organic loopback fleece beneath double-faced Italian charcoal virgin wool.
+              Structured raglan sleeves provide unrestricted anatomical movement while preserving razor-sharp lines.
+            </p>
+            <div class="look-specs">
+              <div class="spec-line">
+                <span class="spec-label">Fit Profile</span>
+                <span class="spec-val">Voluminous / Tailored Hem</span>
+              </div>
+              <div class="spec-line">
+                <span class="spec-label">Origin</span>
+                <span class="spec-val">Milled in Biella, Italy</span>
+              </div>
+              <div class="spec-line">
+                <span class="spec-label">Sustainability</span>
+                <span class="spec-val">100% GOTS Certified Organic</span>
+              </div>
+            </div>
+            <button class="btn btn-solid-white btn-block" id="shop-entire-look-btn">Add Complete Look to Bag
+              ($620)</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Craftsmanship & Quality Pillars -->
+    <section class="sustainability-section container" id="sustainability">
+      <div class="section-title-wrap text-center">
+        <span class="category-sub">MATERIAL CONVICTION</span>
+        <h2 class="section-heading">Uncompromising Fabric Ethics</h2>
+        <p class="section-subtext">Every garment is engineered to outlive trends and endure for decades.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card glass-panel">
+          <div class="pillar-icon">🌱</div>
+          <h3 class="pillar-title">GOTS Japanese Cotton</h3>
+          <p class="pillar-desc">Custom heavy-weight 500-650GSM combed fleece cultivated without chemical fertilizers,
+            spun on vintage Japanese loopwheel machines.</p>
+        </div>
+
+        <div class="pillar-card glass-panel">
+          <div class="pillar-icon">✂️</div>
+          <h3 class="pillar-title">Zero-Waste Patterning</h3>
+          <p class="pillar-desc">Algorithmic cutting layouts yield under 2.8% fabric scrap, with offcuts mechanically
+            re-spun into pocket linings and structural ribbing.</p>
+        </div>
+
+        <div class="pillar-card glass-panel">
+          <div class="pillar-icon">📦</div>
+          <h3 class="pillar-title">Biodegradable Packaging</h3>
+          <p class="pillar-desc">100% plastic-free marine-degradable mailers crafted from organic cornstarch, sealed
+            with water-activated plant tape.</p>
+        </div>
+
+        <div class="pillar-card glass-panel">
+          <div class="pillar-icon">🛡️</div>
+          <h3 class="pillar-title">Lifetime Stitch Warranty</h3>
+          <p class="pillar-desc">We offer complimentary lifetime garment repair for seams, zippers, and hardware to keep
+            clothing in rotation indefinitely.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Press & Client Reviews -->
+    <section class="reviews-section container" id="reviews">
+      <div class="section-title-wrap text-center">
+        <span class="category-sub">EDITORIAL ACCLAIM</span>
+        <h2 class="section-heading">What the Industry Is Saying</h2>
+      </div>
+
+      <!-- Press Badges -->
+      <div class="press-logos-row">
+        <span class="press-logo">VOGUE</span>
+        <span class="press-logo">GQ MAGAZINE</span>
+        <span class="press-logo">HYPEBEAST</span>
+        <span class="press-logo">HIGHSNOBIETY</span>
+        <span class="press-logo">MONOCLE</span>
+      </div>
+
+      <!-- Testimonial Grid -->
+      <div class="reviews-grid">
+        <div class="review-card glass-panel">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"The weight and drape of the Heavyweight Oversized Hoodie is unmatched. It feels
+            architectural, structured yet incredibly comfortable. The best piece in my wardrobe."</p>
+          <div class="reviewer-meta">
+            <strong>Julian Laurent</strong>
+            <span>Verified Acquisition &bull; Paris, France</span>
+          </div>
+        </div>
+
+        <div class="review-card glass-panel">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"Aura Atelier has cracked the code on luxury minimalism. The Double Trench is cut with
+            the precision of a Savile Row coat, but wears like high-end streetwear."</p>
+          <div class="reviewer-meta">
+            <strong>Marcus Chen</strong>
+            <span>Creative Director &bull; Tokyo, Japan</span>
+          </div>
+        </div>
+
+        <div class="review-card glass-panel">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"Shipping was lightning fast to New York, and the plastic-free packaging presentation
+            feels like opening an art monograph. 10/10 craftsmanship."</p>
+          <div class="reviewer-meta">
+            <strong>Elena Rostova</strong>
+            <span>Fashion Journalist &bull; New York, USA</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIP Newsletter & Club -->
+    <section class="newsletter-section container">
+      <div class="newsletter-card glass-panel">
+        <div class="newsletter-content">
+          <span class="category-sub">PRIVATE ARCHIVE ACCESS</span>
+          <h2 class="newsletter-title">Join The Atelier Circle</h2>
+          <p class="newsletter-text">
+            Receive private access to secret micro-drops, invites to Tokyo and Paris showroom pop-ups, and enjoy
+            <strong>15% off</strong> your inaugural order.
+          </p>
+          <form class="newsletter-form" id="store-newsletter-form">
+            <input type="email" id="vip-email" placeholder="Enter your work or personal email..." required
+              class="newsletter-input">
+            <button type="submit" class="btn btn-solid-white">Claim 15% VIP Code</button>
+          </form>
+          <span class="newsletter-feedback" id="vip-feedback"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sliding Cart Drawer -->
+  <aside class="cart-drawer-overlay" id="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <div class="cart-header-title">
+          <h3>Shopping Bag</h3>
+          <span class="cart-items-qty" id="cart-drawer-qty">(0 items)</span>
+        </div>
+        <button class="cart-close-btn" id="cart-close-btn" aria-label="Close Shopping Bag">&times;</button>
+      </div>
+
+      <!-- Free Shipping Threshold Bar -->
+      <div class="shipping-threshold-box">
+        <div class="shipping-text" id="shipping-status-text">
+          Add <strong>$150.00</strong> more to unlock complimentary global express shipping.
+        </div>
+        <div class="threshold-bar-track">
+          <div class="threshold-bar-fill" id="shipping-bar-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items List -->
+      <div class="cart-items-list" id="cart-items-list">
+        <!-- Rendered dynamically via script.js -->
+      </div>
+
+      <!-- Empty Cart Placeholder -->
+      <div class="cart-empty-state" id="cart-empty-state">
+        <span class="empty-icon">🛍️</span>
+        <h4>Your Shopping Bag is Empty</h4>
+        <p>Discover our Autumn / Winter collection and select your signature pieces.</p>
+        <button class="btn btn-solid-white btn-sm" id="empty-cart-browse-btn">Browse Collection</button>
+      </div>
+
+      <!-- Cart Footer / Summary -->
+      <div class="cart-footer" id="cart-footer">
+        <!-- Promo Code Input -->
+        <div class="promo-code-wrap">
+          <input type="text" id="promo-input" placeholder="Promo code (try AURA15)" class="promo-input">
+          <button id="apply-promo-btn" class="btn-promo">Apply</button>
+        </div>
+        <div class="promo-tag-applied" id="promo-tag-applied" style="display: none;">
+          <span>✓ Code AURA15 applied (-15%)</span>
+          <button id="remove-promo-btn">&times;</button>
+        </div>
+
+        <div class="cart-subtotal-row">
+          <span>Subtotal</span>
+          <strong id="cart-subtotal-val">$0.00</strong>
+        </div>
+        <div class="cart-subtotal-row discount-row" id="discount-row" style="display: none;">
+          <span>VIP Discount (15%)</span>
+          <strong id="cart-discount-val">-$0.00</strong>
+        </div>
+        <div class="cart-subtotal-row">
+          <span>Estimated Shipping</span>
+          <strong id="cart-shipping-val">Calculated at checkout</strong>
+        </div>
+        <div class="cart-total-row">
+          <span>Total</span>
+          <strong id="cart-total-val" class="highlight-total">$0.00</strong>
+        </div>
+
+        <button class="btn btn-solid-white btn-block btn-checkout" id="checkout-btn">
+          <span>Proceed to Checkout</span>
+          <span class="lock-icon">🔒</span>
+        </button>
+
+        <div class="payment-guarantees">
+          <span>🔒 256-Bit SSL Encrypted</span>
+          <span>&bull;</span>
+          <span>30-Day Effortless Returns</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Quick View Product Modal -->
+  <div class="modal-overlay" id="quick-view-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card quick-view-card glass-panel">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+
+      <div class="quick-view-grid">
+        <div class="quick-view-image-wrap">
+          <img src="" alt="" id="qv-img" class="quick-view-img">
+        </div>
+
+        <div class="quick-view-details">
+          <span class="category-sub" id="qv-category">OUTERWEAR</span>
+          <h3 class="qv-title" id="qv-title">Product Name</h3>
+          <div class="qv-price-row">
+            <span class="qv-price" id="qv-price">$0.00</span>
+            <span class="qv-badge" id="qv-badge">NEW DROP</span>
+          </div>
+
+          <p class="qv-desc" id="qv-desc">Description of the garment craftsmanship and drape.</p>
+
+          <!-- Color Selector -->
+          <div class="qv-selector-group">
+            <label class="selector-lbl">Color: <strong id="qv-color-name">Obsidian Black</strong></label>
+            <div class="swatches-row" id="qv-swatches">
+              <!-- Swatches generated dynamically -->
+            </div>
+          </div>
+
+          <!-- Size Selector -->
+          <div class="qv-selector-group">
+            <div class="selector-lbl-row">
+              <label class="selector-lbl">Select Size</label>
+              <button class="size-guide-btn" id="size-guide-trigger">Size Guide & Fit Info</button>
+            </div>
+            <div class="sizes-row" id="qv-sizes">
+              <button class="size-btn" data-size="XS">XS</button>
+              <button class="size-btn active" data-size="S">S</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="L">L</button>
+              <button class="size-btn" data-size="XL">XL</button>
+            </div>
+          </div>
+
+          <div class="qv-action-row">
+            <button class="btn btn-solid-white btn-block" id="qv-add-to-bag-btn">Add to Shopping Bag</button>
+          </div>
+
+          <div class="qv-perks">
+            <div class="perk-item">✓ Complimentary 3-5 Day Express Delivery</div>
+            <div class="perk-item">✓ GOTS Certified Organic Natural Fibers</div>
+            <div class="perk-item">✓ 30-Day Complimentary Size Exchange</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Size Guide Modal -->
+  <div class="modal-overlay" id="size-guide-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card glass-panel" style="max-width: 650px;">
+      <button class="modal-close-btn" id="size-guide-close">&times;</button>
+      <h3 class="section-heading" style="font-size: 1.5rem; margin-bottom: 1rem;">Garment Size Specifications</h3>
+      <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: var(--text-muted);">
+        All garments are designed with relaxed, dropped shoulder architectural cuts. For a tailored silhouette, order
+        your standard size; for a high-fashion exaggerated oversized drape, consider sizing up.
+      </p>
+
+      <div class="table-responsive">
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Chest (in/cm)</th>
+              <th>Length (in/cm)</th>
+              <th>Sleeve (in/cm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>XS</strong></td>
+              <td>42" / 106 cm</td>
+              <td>27" / 68 cm</td>
+              <td>33" / 84 cm</td>
+            </tr>
+            <tr>
+              <td><strong>S</strong></td>
+              <td>44" / 112 cm</td>
+              <td>28" / 71 cm</td>
+              <td>34" / 86 cm</td>
+            </tr>
+            <tr>
+              <td><strong>M</strong></td>
+              <td>46" / 117 cm</td>
+              <td>29" / 74 cm</td>
+              <td>35" / 89 cm</td>
+            </tr>
+            <tr>
+              <td><strong>L</strong></td>
+              <td>48" / 122 cm</td>
+              <td>30" / 76 cm</td>
+              <td>36" / 91 cm</td>
+            </tr>
+            <tr>
+              <td><strong>XL</strong></td>
+              <td>51" / 130 cm</td>
+              <td>31" / 79 cm</td>
+              <td>37" / 94 cm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Confirmation Simulation Modal -->
+  <div class="modal-overlay" id="checkout-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card glass-panel text-center" style="max-width: 480px;">
+      <button class="modal-close-btn" id="checkout-modal-close">&times;</button>
+      <div style="font-size: 3rem; margin-bottom: 1rem;">✨</div>
+      <h3 class="section-heading" style="font-size: 1.6rem;">Order Confirmed</h3>
+      <p style="color: var(--text-muted); margin: 0.8rem 0 1.5rem 0;">
+        Thank you for acquiring with AURA ATELIER. Your order confirmation and tracking credentials have been
+        transmitted to your email.
+      </p>
+      <div
+        style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-family: monospace;">
+        Order Ref: <strong id="order-ref-num">#AU-94821-X</strong>
+      </div>
+      <button class="btn btn-solid-white btn-block" id="continue-shopping-btn">Continue Exploring Capsule</button>
+    </div>
+  </div>
+
+  <!-- Global Toast Feedback Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="footer-wrapper">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#hero" class="brand-logo">
+          <span class="logo-mark">AURA</span>
+          <span class="logo-sub">ATELIER</span>
+        </a>
+        <p class="footer-tagline">
+          Contemporary high-fashion garments engineered from Tokyo to Milan. Redefining modern silhouette, tactile
+          comfort, and organic sustainability.
+        </p>
+        <div class="currency-indicator">
+          <span>Active Flagship: Worldwide Dispatch</span>
+        </div>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h4>Capsules</h4>
+          <ul>
+            <li><a href="#collection" data-filter="outerwear">Trench & Overcoats</a></li>
+            <li><a href="#collection" data-filter="streetwear">Heavyweight Hoodies</a></li>
+            <li><a href="#collection" data-filter="knitwear">Virgin Wool Knitwear</a></li>
+            <li><a href="#collection" data-filter="streetwear">Relaxed Sweatpants</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Atelier Client Care</h4>
+          <ul>
+            <li><a href="#" id="footer-size-guide">Size & Fit Specifications</a></li>
+            <li><a href="#">Complimentary Global Shipping</a></li>
+            <li><a href="#">30-Day Returns & Exchanges</a></li>
+            <li><a href="#">Lifetime Garment Warranty</a></li>
+            <li><a href="admin.html" style="color: var(--accent-gold); font-weight: 600;">⚙️ Atelier Admin Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ethical Manifesto</h4>
+          <ul>
+            <li><a href="#sustainability">GOTS Organic Cotton</a></li>
+            <li><a href="#sustainability">Zero-Waste Patterning</a></li>
+            <li><a href="#">Artisan Studio Partners</a></li>
+            <li><a href="#">Carbon Offsetting Report</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p>&copy; <span id="current-year">2026</span> AURA ATELIER INC. All rights reserved.</p>
+
+      <!-- Payment Badges -->
+      <div class="payment-methods">
+        <span class="pay-badge">Apple Pay</span>
+        <span class="pay-badge">Google Pay</span>
+        <span class="pay-badge">Visa</span>
+        <span class="pay-badge">Mastercard</span>
+        <span class="pay-badge">Klarna</span>
+        <span class="pay-badge">Amex</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+[
+  {
+    "id": "hoodie-01",
+    "name": "Oversized Monolith Hoodie",
+    "category": "streetwear",
+    "price": 180,
+    "material": "650GSM Japanese Combed Fleece",
+    "badge": "BESTSELLER",
+    "image": "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=900&q=80",
+    "description": "Constructed from custom 650GSM organic loopback cotton with sculptural double-layered hood and tonal architectural embroidery. Designed for an effortless dropped shoulder drape.",
+    "swatches": [
+      { "name": "Obsidian Black", "hex": "#121214" },
+      { "name": "Dune Sand", "hex": "#d4cfcb" },
+      { "name": "Forest Olive", "hex": "#444a3c" }
+    ]
+  },
+  {
+    "id": "coat-01",
+    "name": "Atelier Double-Breasted Trench",
+    "category": "outerwear",
+    "price": 380,
+    "material": "Italian Double-Faced Virgin Wool",
+    "badge": "SIGNATURE DROP",
+    "image": "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=900&q=80",
+    "description": "Masterfully tailored double-breasted overcoat featuring an exaggerated storm flap, hand-stitched horn buttons, and a removable architectural waist belt.",
+    "swatches": [
+      { "name": "Charcoal Melange", "hex": "#262629" },
+      { "name": "Warm Camel", "hex": "#b89467" }
+    ]
+  },
+  {
+    "id": "blazer-01",
+    "name": "Sculpted Minimalist Blazer",
+    "category": "outerwear",
+    "price": 320,
+    "material": "Worsted Wool & Technical Twill",
+    "badge": "LIMITED ARCHIVE",
+    "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=80",
+    "description": "Clean single-button front closure with concealed seam pockets and unstructured shoulders for a contemporary fluid silhouette suitable for day-to-evening wear.",
+    "swatches": [
+      { "name": "Obsidian Black", "hex": "#121214" },
+      { "name": "Slate Grey", "hex": "#52525b" }
+    ]
+  },
+  {
+    "id": "knit-01",
+    "name": "Alpaca Ribbed Turtleneck",
+    "category": "knitwear",
+    "price": 240,
+    "material": "Traceable Baby Alpaca & Organic Merino",
+    "badge": "NEW DROP",
+    "image": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=900&q=80",
+    "description": "Substantial chunky 7-gauge fisherman rib knit with a protective rollover collar and natural heat retention properties without synthetic microfiber blending.",
+    "swatches": [
+      { "name": "Oatmeal Heather", "hex": "#e5e0db" },
+      { "name": "Espresso Brown", "hex": "#3d2b22" }
+    ]
+  },
+  {
+    "id": "jacket-01",
+    "name": "Technical Waxed Chore Jacket",
+    "category": "outerwear",
+    "price": 290,
+    "material": "Waxed Japanese Ripstop Cotton",
+    "badge": "WEATHERPROOF",
+    "image": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=900&q=80",
+    "description": "Utility jacket with water-resistant paraffin wax finish, Fidlock magnetic chest closures, and articulated sleeves engineered for maximum mobility.",
+    "swatches": [
+      { "name": "Olive Drab", "hex": "#464d3f" },
+      { "name": "Washed Black", "hex": "#27272a" }
+    ]
+  },
+  {
+    "id": "pants-01",
+    "name": "Wide-Leg Pleated Trousers",
+    "category": "streetwear",
+    "price": 210,
+    "material": "Italian Tropical Wool Blend",
+    "badge": "RUNWAY ESSENTIAL",
+    "image": "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=900&q=80",
+    "description": "High-waisted trousers with dual forward knife pleats, side adjusters, and a generous full break over luxury sneakers or dress boots.",
+    "swatches": [
+      { "name": "Graphite Black", "hex": "#1c1c1f" },
+      { "name": "Pebble Beige", "hex": "#cfc9c2" }
+    ]
+  },
+  {
+    "id": "sweatpants-01",
+    "name": "Heavyweight Darted Sweatpants",
+    "category": "streetwear",
+    "price": 175,
+    "material": "500GSM Loopwheel Fleece",
+    "badge": "COMFORT ARCHIVE",
+    "image": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=900&q=80",
+    "description": "Relaxed sweatpants with anatomical knee darts, concealed zip security pockets, and thick cotton drawstrings with engraved matte metal aglets.",
+    "swatches": [
+      { "name": "Obsidian Black", "hex": "#121214" },
+      { "name": "Ash Grey", "hex": "#71717a" }
+    ]
+  },
+  {
+    "id": "dress-01",
+    "name": "Silk-Ribbed Column Maxi Dress",
+    "category": "knitwear",
+    "price": 260,
+    "material": "Mulberry Silk & Fine Organic Viscose",
+    "badge": "CAPSULE EXCLUSIVE",
+    "image": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=80",
+    "description": "Sculptural body-contouring column dress with clean square neckline, subtle side leg slit, and luxurious silky texture against bare skin.",
+    "swatches": [
+      { "name": "Midnight Navy", "hex": "#0f172a" },
+      { "name": "Burgundy Wine", "hex": "#4c0519" }
+    ]
+  }
+]

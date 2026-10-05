@@ -1,0 +1,20 @@
+{
+  "name": "pandu-collections-storefront",
+  "version": "1.0.0",
+  "description": "Contemporary Luxury Apparel Storefront & Admin Portal with Native Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "py": "python server.py"
+  },
+  "keywords": [
+    "clothing",
+    "streetwear",
+    "ecommerce",
+    "admin-portal",
+    "rest-api"
+  ],
+  "author": "Pandu Collections Atelier",
+  "license": "ISC"
+}
